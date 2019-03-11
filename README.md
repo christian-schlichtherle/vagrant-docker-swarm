@@ -1,6 +1,6 @@
 # Vagrant Docker Swarm
 
-This project provides a `Vagrantfile` to set up a Docker swarm with one manager and two worker nodes.
+This project provides a `Vagrantfile` to set up a Docker swarm with a manager and multiple worker nodes.
 The number of worker nodes can be set using the environment variable `DOCKER_WORKER_COUNT`.
 
 ## Prerequisites
