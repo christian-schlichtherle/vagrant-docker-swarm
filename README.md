@@ -1,6 +1,6 @@
 # Vagrant Docker Swarm
 
-This project provides a `Vagrantfile` to set up a Docker swarm with one master and two worker nodes.
+This project provides a `Vagrantfile` to set up a Docker swarm with one manager and two worker nodes.
 The number of worker nodes can be set using the environment variable `DOCKER_WORKER_COUNT`.
 
 ## Prerequisites
@@ -9,7 +9,7 @@ The number of worker nodes can be set using the environment variable `DOCKER_WOR
 
 ## Starting A Docker Swarm
 
-To set-up and start a swarm with one master and two worker nodes:
+To set-up and start a swarm with one manager and two worker nodes:
 
     $ vagrant up 
 
@@ -20,7 +20,14 @@ To change the number of worker nodes to three:
 
 ## Smoke-Testing The Docker Swarm 
 
-    $ vagrant ssh manager -c "docker node ls"
+```bash
+$ vagrant ssh manager -c "docker node ls"
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+2805ij9rt6lqd6e8q3mjzzfsd *   manager             Ready               Active              Leader              18.09.3
+ntuu4zxr6ja2sk09ay7ge0cy1     worker-1            Ready               Active                                  18.09.3
+ajc8la5i93d9rjdjudtsgfl6o     worker-2            Ready               Active                                  18.09.3
+Connection to 127.0.0.1 closed.
+```
 
 ## Suspending The Docker Swarm
 
